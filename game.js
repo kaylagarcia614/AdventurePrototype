@@ -4,7 +4,7 @@ class Scene1 extends AdventureScene {
     }
     preload() {
         this.load.path = "./assets/";
-        this.load.image('cam', 'cam.png');
+        this.load.image('player', 'player.png');
         this.load.image('poppy', 'poppy.png');
         this.load.image('back', 'back.png');
         this.load.image('arrow', 'arrow.png');
@@ -45,22 +45,22 @@ class Scene1 extends AdventureScene {
         });
     })
 
-        this.cam = this.add.image(
+        this.player = this.add.image(
             400,//x
             860,//y
-            'cam',//imagename
+            'player',//imagename
             )
-            this.cam.setDepth(1)
-            this.cam.setScale(1.5) //resize
+            this.player.setDepth(1)
+            this.player.setScale(1.5) //resize
         //let clip = this.add.text(this.w * 0.3, this.w * 0.3, "📎 paperclip")
-        //let cam = this.add.image("cam")
+        //let player = this.add.image("player")
             //.setFontSize(this.s * 2)
             .setInteractive()
             .on('pointerover', () => this.showMessage("im ready for an adventure."))
             .on('pointerdown', () => {
                 this.showMessage("stop it!");
                 this.tweens.add({
-                    targets: this.cam,
+                    targets: this.player,
                     x: '+=' + this.s,
                     repeat: 2,
                     yoyo: true,
@@ -176,27 +176,10 @@ class Scene1 extends AdventureScene {
             myBackground.setDepth(0);
             //myBackground.setScale(myImage.width / myBackground.width, myImage.height / myBackground.height);
             this.poppy.background = this.back;
-            this.cam.background = this.back;
+            this.player.background = this.back;
             this.arrow.background = this.back;
             this.butterob.background = this.back;
-        // let door = this.add.text(this.w * 0.1, this.w * 0.15, "🚪 locked door")
-        //     .setFontSize(this.s * 2)
-        //     .setInteractive()
-        //     .on('pointerover', () => {
-        //         if (this.hasItem("key")) {
-        //             this.showMessage("You've got the key for this door.");
-        //         } else {
-        //             this.showMessage("It's locked. Can you find a key?");
-        //         }
-        //     })
-        //     .on('pointerdown', () => {
-        //         if (this.hasItem("key")) {
-        //             this.loseItem("key");
-        //             this.showMessage("*squeak*");
-        //             door.setText("🚪 unlocked door");
-        //             this.gotoScene('demo2');
-        //         }
-        //     })
+        
 
     }
 }
@@ -207,7 +190,7 @@ class Scene2 extends AdventureScene {
     }
     preload() {
         this.load.path = "./assets/";
-        this.load.image('cam', 'cam.png');
+        this.load.image('player', 'player.png');
         this.load.image('forest', 'forestback.png');
         this.load.image('sign', 'sign.png');
         this.load.image('arrowdown', 'arrowdown.png');
@@ -227,23 +210,7 @@ class Scene2 extends AdventureScene {
             this.flyob.setDepth(1)
             this.flyob.setScale(.5) //resize
         .setInteractive()
-        // const fxhadow = this.flyob.preFX.addShadow(0, 0, 0.002, 1, 0x333333, 5); // reduce blur, quality, and distance
-        // this.add.tween({
-        //     targets: this.flyob,
-        //     //scale: 1.05,
-        //     scale: .55,
-        //     duration: 800,
-        //     yoyo: true,
-        //     repeat: -1
-        // });
-        // this.add.tween({
-        //     targets: fxhadow,
-        //     x: 5,
-        //     y: -5,
-        //     duration: 800,
-        //     yoyo: true,
-        //     repeat: -1
-        // })
+        
         .on('pointerover', () => {
             this.showMessage('*bzz bzz*');
             this.flyob.setDepth(1)
@@ -267,29 +234,7 @@ class Scene2 extends AdventureScene {
             });
         })
 
-        // this.stickob = this.add.image(
-        //     600,//x
-        //     950,//y
-        //     'stick',//imagename
-        //     )
-        //     this.stickob.setDepth(1)
-        //     this.stickob.setScale(1) //resize
-        // //.setFontSize(this.s * 2)
-        // .setInteractive()
-        // .on('pointerover', () => {
-        //     this.showMessage("Nice stick.")
-        // })
-        // .on('pointerdown', () => {
-        //     this.showMessage("Love me a good stick.");
-        //     this.gainItem('Stick');
-        //     this.tweens.add({
-        //         targets: this.stickob,
-        //         y: `-=${2 * this.s}`,
-        //         alpha: { from: 1, to: 0 },
-        //         duration: 500,
-        //         onComplete: () => this.stickob.destroy()
-        //     });
-        // })
+        
 
         this.signob = this.add.image(
             800,//x
@@ -299,7 +244,7 @@ class Scene2 extends AdventureScene {
             this.signob.setDepth(1)
             this.signob.setScale(.3) //resize
             //let clip = this.add.text(this.w * 0.3, this.w * 0.3, "📎 paperclip")
-            //let cam = this.add.image("cam")
+            //let player = this.add.image("player")
             //.setFontSize(this.s * 2)
             .setInteractive()
             //const fxShadow = this.signob.preFX.addShadow(0, 0, 0.006, 2, 0x333333, 10);
@@ -334,22 +279,20 @@ class Scene2 extends AdventureScene {
             repeat: -1
         })
 
-        this.cam = this.add.image(
+        this.player = this.add.image(
             400,//x
             800,//y
-            'cam',//imagename
+            'player',//imagename
             )
-            this.cam.setDepth(1)
-            this.cam.setScale(1.5) //resize
-            //let clip = this.add.text(this.w * 0.3, this.w * 0.3, "📎 paperclip")
-            //let cam = this.add.image("cam")
-            //.setFontSize(this.s * 2)
+            this.player.setDepth(1)
+            this.player.setScale(1.5) //resize
+            
             .setInteractive()
             .on('pointerover', () => this.showMessage("I feel someone touching me hehe."))
             .on('pointerdown', () => {
                 this.showMessage("Agh!");
                 this.tweens.add({
-                    targets: this.cam,
+                    targets: this.player,
                     x: '+=' + this.s,
                     repeat: 2,
                     yoyo: true,
@@ -369,15 +312,10 @@ class Scene2 extends AdventureScene {
                 .setInteractive()
                 .on('pointerover', () => {
                     this.showMessage("Right.");
-                    // if (this.hasItem("Poppy")) {
-                    //     this.showMessage("Maybe there are more flowers in the woods.");
-                    // } else {
-                    //     this.showMessage("Maybe I should pick a flower before I go since they are so beautiful.");
-                    // }
+                    
                 })
                 .on('pointerdown', () => {
-                    // if (this.hasItem("Poppy")) {
-                    //     this.loseItem("Poppy");
+                    
                         this.showMessage("Kinda sus");
                         //door.setText("🚪 unlocked door");
                         this.gotoScene('scene4');
@@ -458,7 +396,7 @@ class Scene3 extends AdventureScene {
     }
     preload() {
         this.load.path = "./assets/";
-        this.load.image('cam', 'cam.png');
+        this.load.image('player', 'player.png');
         this.load.image('lefto', 'left.png');
         this.load.image('grave1', 'grave1.png');
         this.load.image('stump', 'stump.png');
@@ -580,13 +518,13 @@ class Scene3 extends AdventureScene {
             repeat: -1
         })
             
-        this.cam = this.add.image(
+        this.player = this.add.image(
             300,//x
             800,//y
-            'cam',//imagename
+            'player',//imagename
             )
-            this.cam.setDepth(1)
-            this.cam.setScale(2) //resize
+            this.player.setDepth(1)
+            this.player.setScale(2) //resize
             
             .setInteractive()
             .on('pointerover', () => this.showMessage("I would hate to lose someone."))
@@ -636,7 +574,7 @@ class Scene3 extends AdventureScene {
         forestl.setDepth(0);
         this.graveob.background = this.back;
         this.arrowdo.background = this.back;
-        this.cam.background = this.back;
+        this.player.background = this.back;
         this.stickob.background = this.back;
         this.arrow.background = this.back;
     }
@@ -648,7 +586,7 @@ class Scene9 extends AdventureScene {
     }
     preload() {
         this.load.path = "./assets/";
-        this.load.image('cam', 'cam.png');
+        this.load.image('player', 'player.png');
         this.load.image('pond', 'pond.png');
         this.load.image('ducky', 'ducky.png');
         this.load.image('frog', 'frog.png');
@@ -762,13 +700,13 @@ class Scene9 extends AdventureScene {
         })
 
 
-        this.cam = this.add.image(
+        this.player = this.add.image(
             300,//x
             800,//y
-            'cam',//imagename
+            'player',//imagename
             )
-            this.cam.setDepth(1)
-            this.cam.setScale(2) //resize
+            this.player.setDepth(1)
+            this.player.setScale(2) //resize
             .setInteractive()
             .on('pointerover', () => {
                 this.showMessage("how nice!");
@@ -822,7 +760,7 @@ class Scene9 extends AdventureScene {
         const pondo = this.add.image(0, 0, 'pond');
         pondo.setOrigin(0);
         pondo.setDepth(0);
-        this.cam.background = this.back;
+        this.player.background = this.back;
         this.arrowdo.background = this.back;
         this.frog.background = this.back;
     }
@@ -834,7 +772,7 @@ class Scene4 extends AdventureScene {
     }
     preload() {
         this.load.path = "./assets/";
-        this.load.image('cam', 'cam.png');
+        this.load.image('player', 'player.png');
         this.load.image('deerman', 'dearthedeer.png');
         this.load.image('righto', 'deepforest.png');
         this.load.image('arrowdown', 'arrowdown.png');
@@ -851,11 +789,7 @@ class Scene4 extends AdventureScene {
             .setInteractive()
             .on('pointerover', () => {
                 this.showMessage("back.");
-                // if (this.hasItem("Poppy")) {
-                //     this.showMessage("Maybe there are more flowers in the woods.");
-                // } else {
-                //     this.showMessage("Maybe I should pick a flower before I go since they are so beautiful.");
-                // }
+                
             })
             .on('pointerdown', () => {
                 console.log("Clicked on the arrow to go back.");
@@ -863,22 +797,20 @@ class Scene4 extends AdventureScene {
             });
 
 
-            this.cam = this.add.image(
+            this.player = this.add.image(
             400,//x
             800,//y
-            'cam',//imagename
+            'player',//imagename
             )
-            this.cam.setDepth(1)
-            this.cam.setScale(1.5) //resize
-            //let clip = this.add.text(this.w * 0.3, this.w * 0.3, "📎 paperclip")
-            //let cam = this.add.image("cam")
-            //.setFontSize(this.s * 2)
+            this.player.setDepth(1)
+            this.player.setScale(1.5) //resize
+            
             .setInteractive()
             .on('pointerover', () => this.showMessage("im afraid."))
             .on('pointerdown', () => {
                 this.showMessage("*deep breaths*");
                 this.tweens.add({
-                    targets: this.cam,
+                    targets: this.player,
                     x: '+=' + this.s,
                     repeat: 2,
                     yoyo: true,
@@ -895,7 +827,7 @@ class Scene4 extends AdventureScene {
             this.deermanob.setDepth(1)
             this.deermanob.setScale(4) //resize
             //let clip = this.add.text(this.w * 0.3, this.w * 0.3, "📎 paperclip")
-            //let cam = this.add.image("cam")
+            //let player = this.add.image("player")
             //.setFontSize(this.s * 2)
             .setInteractive()
             .on('pointerover', () => this.showMessage("its my bully.")) 
@@ -972,7 +904,7 @@ class Scene4 extends AdventureScene {
         forest2.setDepth(0);
         // this.graveob.background = this.back;
         this.deermanob.background = this.back;
-        this.cam.background = this.back;
+        this.player.background = this.back;
         this.arrowdo.background = this.back;
     }
 }
@@ -1082,7 +1014,7 @@ class Scene6 extends AdventureScene {
     preload() {
         this.load.path = "./assets/";
         this.load.image('righto', 'deepforest.png');
-        this.load.image('cam', 'cam.png');
+        this.load.image('player', 'player.png');
         this.load.image('deer', 'deer.png');
     }
     onEnter() {
@@ -1094,21 +1026,12 @@ class Scene6 extends AdventureScene {
             this.deerob.setScale(2);
             this.deerob.setDepth(1)
             this.deerob.setScale(2) //resize
-            //let clip = this.add.text(this.w * 0.3, this.w * 0.3, "📎 paperclip")
-            //let cam = this.add.image("cam")
-            //.setFontSize(this.s * 2)
+            
             .setInteractive()
             .on('pointerover', () => this.showMessage("Thank you. im sorry for scaring you"))
             .on('pointerdown', () => {
                 this.showMessage("thank you for the flower, it reminds me of my mom, I miss her.");
-                // this.tweens.add({
-                //     targets: this.cam,
-                //     x: '+=' + this.s,
-                //     repeat: 2,
-                //     yoyo: true,
-                //     ease: 'Sine.inOut',
-                //     duration: 100
-                // });
+               
             });
             const cheese = this.deerob.preFX.addShadow(0, 0, 0.002, 1, 0x333333, 5); // reduce blur, quality, and distance
         this.add.tween({
@@ -1128,30 +1051,14 @@ class Scene6 extends AdventureScene {
             repeat: -1
         })
 
-        this.cam = this.add.image(
+        this.player = this.add.image(
             400,//x
             800,//y
-            'cam',//imagename
+            'player',//imagename
             )
-            this.cam.setDepth(1)
-            this.cam.setScale(1.5) //resize
-            //let clip = this.add.text(this.w * 0.3, this.w * 0.3, "📎 paperclip")
-            //let cam = this.add.image("cam")
-            //.setFontSize(this.s * 2)
-
-            // .setInteractive()
-            // .on('pointerover', () => this.showMessage("I feel like there is a mouse on me."))
-            // .on('pointerdown', () => {
-            //     this.showMessage("Agh!");
-            //     this.tweens.add({
-            //         targets: this.cam,
-            //         x: '+=' + this.s,
-            //         repeat: 2,
-            //         yoyo: true,
-            //         ease: 'Sine.inOut',
-            //         duration: 100
-            //     });
-            // });
+            this.player.setDepth(1)
+            this.player.setScale(1.5) //resize
+            
 
 
         // Add finish game text to outro
@@ -1167,15 +1074,10 @@ class Scene6 extends AdventureScene {
         const forest2 = this.add.image(0, 0, 'righto');
         forest2.setOrigin(0);
         forest2.setDepth(0);
-        //add deer
-        //add cam
-
-        // this.graveob.background = this.back;
-        // this.deermanob.background = this.back;
-        this.cam.background = this.back;
+        
+        this.player.background = this.back;
         this.deerob.background = this.back;
-        //this.finish.background = this.back;
-        // this.deermanob.background = this.back;
+        
     }
 }
 
@@ -1356,16 +1258,10 @@ class Outro extends Phaser.Scene {
         super('outro');
     }
     preload() {
-        this.load.image('duck', 'duck.png');
+        
     }
     create() {
-        this.pop = this.add.image(
-            1000,//x
-            900,//y
-            'duck',//imagename
-            )
-            //this.title.setDepth(1)
-            this.pop.setScale(4) //resize
+        
 
         this.cameras.main.setBackgroundColor('0x1f2c39');
         this.add.text(100, 50, "Thanks for playing\nCredit:\nArt, story, game.js - Kayla Garcia\nadventure.js - Adam Smith").setFontSize(50);
