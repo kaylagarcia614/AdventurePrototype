@@ -16,7 +16,7 @@ Asset sources:
 - (For each image/audio/video asset used, describe how it was created. What tool did you use to create it? Was it based on another work? If so, how did you change it, and where can we learn more about the original work for comparison? Use [Markdown link syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#links).)
 
 all sprite art was done by me using a mixure of photoshop and pixilart.com
-backgrounds were found on a royalty free page with no author, however, I did you canva and photoshop to change the orinal art to make it more of my own
+backgrounds are made by me using photoshop
 
 logo was made my me using picilart.com
 logo sound was made by me using beetbox.co
