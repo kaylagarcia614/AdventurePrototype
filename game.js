@@ -52,9 +52,7 @@ class Scene1 extends AdventureScene {
             )
             this.player.setDepth(1)
             this.player.setScale(1.5) //resize
-        //let clip = this.add.text(this.w * 0.3, this.w * 0.3, "📎 paperclip")
-        //let player = this.add.image("player")
-            //.setFontSize(this.s * 2)
+        
             .setInteractive()
             .on('pointerover', () => this.showMessage("im ready for an adventure."))
             .on('pointerdown', () => {
@@ -112,24 +110,7 @@ class Scene1 extends AdventureScene {
         })
 
 
-        // let key = this.add.text(this.w * 0.5, this.w * 0.1, "🔑 key")
-        //     .setFontSize(this.s * 2)
-        //     .setInteractive()
-        //     .on('pointerover', () => {
-        //         this.showMessage("It's a nice key.")
-        //     })
-        //     .on('pointerdown', () => {
-        //         this.showMessage("You pick up the key.");
-        //         this.gainItem('key');
-        //         this.tweens.add({
-        //             targets: key,
-        //             y: `-=${2 * this.s}`,
-        //             alpha: { from: 1, to: 0 },
-        //             duration: 500,
-        //             onComplete: () => key.destroy()
-        //         });
-        //     })
-
+        
         this.arrow = this.add.image(
             1200,//x
             900,//y
@@ -148,7 +129,7 @@ class Scene1 extends AdventureScene {
             .on('pointerdown', () => {
                 if (this.hasItem("Poppy")) {
                     //this.loseItem("Poppy");
-                    this.showMessage("*la la la*");
+                    this.showMessage("*lets a go*");
                     //door.setText("🚪 unlocked door");
                     this.gotoScene('scene2');
                 }
@@ -243,22 +224,13 @@ class Scene2 extends AdventureScene {
             )
             this.signob.setDepth(1)
             this.signob.setScale(.3) //resize
-            //let clip = this.add.text(this.w * 0.3, this.w * 0.3, "📎 paperclip")
-            //let player = this.add.image("player")
-            //.setFontSize(this.s * 2)
+            
             .setInteractive()
             //const fxShadow = this.signob.preFX.addShadow(0, 0, 0.006, 2, 0x333333, 10);
             .on('pointerover', () => this.showMessage("A sign."))
             .on('pointerdown', () => {
                 this.showMessage("right or left, hmmmm");
-                // this.tweens.add({
-                //     targets: this.signob,
-                //     x: '+=' + this.s,
-                //     repeat: 2,
-                //     yoyo: true,
-                //     ease: 'Sine.inOut',
-                //     duration: 100
-                // });
+                
             });
             const fxShadow = this.signob.preFX.addShadow(0, 0, 0.002, 1, 0x333333, 5); // reduce blur, quality, and distance
 
@@ -341,7 +313,7 @@ class Scene2 extends AdventureScene {
 
                 this.arrows = this.add.image(
                     1200,//x
-                    880,//y
+                    750,//y
                     'arrowslant',//imagename
                     )
                     this.arrows.setDepth(1);
@@ -392,7 +364,7 @@ class Scene2 extends AdventureScene {
 
 class Scene3 extends AdventureScene {
     constructor() {
-        super("scene3", "The Cemetery.");
+        super("scene3", "The graveyard.");
     }
     preload() {
         this.load.path = "./assets/";
@@ -406,7 +378,7 @@ class Scene3 extends AdventureScene {
     }
     onEnter() {
         this.arrow = this.add.image(
-            1000,//x
+            1200,//x
             700,//y
             'arrow',//imagename
             )
@@ -602,7 +574,7 @@ class Scene9 extends AdventureScene {
             this.frog.setScale(1) //resize
             .setInteractive()
             .on('pointerover', () => {
-                this.showMessage("riiiiiibbit.\nF: to feed frog firefly\nB: to feed frog butterfly.");
+                this.showMessage("*in a deep voice* frog says: whats up bro\nF: to feed frog firefly\nB: to feed frog butterfly.");
             })
             .on('pointerdown', () => {
                     //this.loseItem("Poppy");
@@ -728,11 +700,7 @@ class Scene9 extends AdventureScene {
             .setInteractive()
             .on('pointerover', () => {
                 this.showMessage("back.");
-                // if (this.hasItem("Poppy")) {
-                //     this.showMessage("Maybe there are more flowers in the woods.");
-                // } else {
-                //     this.showMessage("Maybe I should pick a flower before I go since they are so beautiful.");
-                // }
+                
             })
             .on('pointerdown', () => {
                 console.log("Clicked on the arrow to go back.");
@@ -826,9 +794,7 @@ class Scene4 extends AdventureScene {
             )
             this.deermanob.setDepth(1)
             this.deermanob.setScale(4) //resize
-            //let clip = this.add.text(this.w * 0.3, this.w * 0.3, "📎 paperclip")
-            //let player = this.add.image("player")
-            //.setFontSize(this.s * 2)
+            
             .setInteractive()
             .on('pointerover', () => this.showMessage("its my bully.")) 
             .on('pointerdown', () => {
@@ -1001,9 +967,7 @@ class Scene5 extends AdventureScene {
         const forest3 = this.add.image(0, 0, 'lefto');
         forest3.setOrigin(0);
         forest3.setDepth(0);
-        // this.graveob1.background = this.back;
-        // this.graveob2.background = this.back;
-        // this.deermanob.background = this.back;
+        
     }
 }
 
